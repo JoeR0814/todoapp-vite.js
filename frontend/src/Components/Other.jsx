@@ -32,7 +32,7 @@ function Other() {
   return (
     <>
       <div id='other'>
-        <div className='flex justify-center'>
+        <div className='flex justify-center font-bold text-black px-4 py-7 md-hidden'>
           <form
             id='todo-form'
             className='bg-yellow-200 flex flex-col justify-center items-center p-2 border-solid border-2 border-black w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3'

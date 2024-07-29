@@ -31,13 +31,13 @@ function Outside() {
 
   return (
     <>
-      <div>
-        <div id='outside' className='flex justify-center'>
+      <div id='outside'>
+        <div className='flex justify-center font-bold text-black px-4 py-7 md-hidden'>
           <form
             id='todo-form'
             className='bg-yellow-200 flex flex-col justify-center items-center p-2 border-solid border-2 border-black w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3'
           >
-            <h1 className='text-3xl font-bold mb-2'>Outside Chores</h1>
+            <h1 className='text-3xl font-bold mb-2'>Things To Do Outside</h1>
             {items.map((item, index) => (
               <div key={index} className='flex items-center mb-2'>
                 <input

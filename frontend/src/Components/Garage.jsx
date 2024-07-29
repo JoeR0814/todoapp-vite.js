@@ -31,53 +31,57 @@ function Garage() {
 
   return (
     <>
-      <div id='garage' className='flex justify-center'>
-        <form
-          id='todo-form'
-          className='bg-yellow-200 flex flex-col justify-center items-center p-2 border-solid border-2 border-black w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3'
-        >
-          <h1 className='text-3xl font-bold mb-2'>Garage/Cars</h1>
-          {items.map((item, index) => (
-            <div key={index} className='flex items-center mb-2'>
-              <input
-                type='text'
-                placeholder='Add new todo'
-                className='p-1 border border-gray-300 rounded'
-                value={item}
-                onChange={(event) => handleChange(index, event)}
-                disabled={!isEditing[index]}
-              />
-              {isEditing[index] ? (
+      <div id='garage'>
+        <div className='flex justify-center font-bold text-black px-4 py-7 md-hidden'>
+          <form
+            id='todo-form'
+            className='bg-yellow-200 flex flex-col justify-center items-center p-2 border-solid border-2 border-black w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3'
+          >
+            <h1 className='text-3xl font-bold mb-2'>
+              Things To Do In The Garage/Cars
+            </h1>
+            {items.map((item, index) => (
+              <div key={index} className='flex items-center mb-2'>
+                <input
+                  type='text'
+                  placeholder='Add new todo'
+                  className='p-1 border border-gray-300 rounded'
+                  value={item}
+                  onChange={(event) => handleChange(index, event)}
+                  disabled={!isEditing[index]}
+                />
+                {isEditing[index] ? (
+                  <button
+                    type='button'
+                    className='ml-2 p-1 bg-blue-500 text-white rounded'
+                    onClick={() => handleSave(index)}
+                  >
+                    Save
+                  </button>
+                ) : (
+                  <button
+                    type='button'
+                    className='ml-2 p-1 bg-gray-500 text-white rounded'
+                    onClick={() => {
+                      const newIsEditing = [...isEditing];
+                      newIsEditing[index] = true;
+                      setIsEditing(newIsEditing);
+                    }}
+                  >
+                    Edit
+                  </button>
+                )}
                 <button
                   type='button'
-                  className='ml-2 p-1 bg-blue-500 text-white rounded'
-                  onClick={() => handleSave(index)}
+                  className='ml-2 p-1 bg-red-500 text-white rounded'
+                  onClick={() => handleDelete(index)}
                 >
-                  Save
+                  Delete
                 </button>
-              ) : (
-                <button
-                  type='button'
-                  className='ml-2 p-1 bg-gray-500 text-white rounded'
-                  onClick={() => {
-                    const newIsEditing = [...isEditing];
-                    newIsEditing[index] = true;
-                    setIsEditing(newIsEditing);
-                  }}
-                >
-                  Edit
-                </button>
-              )}
-              <button
-                type='button'
-                className='ml-2 p-1 bg-red-500 text-white rounded'
-                onClick={() => handleDelete(index)}
-              >
-                Delete
-              </button>
-            </div>
-          ))}
-        </form>
+              </div>
+            ))}
+          </form>
+        </div>
       </div>
     </>
   );
