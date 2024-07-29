@@ -7,6 +7,7 @@ import Outside from './Components/Outside';
 import Garage from './Components/Garage';
 import Other from './Components/Other';
 import Footer from './Components/Footer';
+import Login from './Components/Login';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Garage />
       <Other />
       <Footer />
+      <Login />
     </>
   );
 }

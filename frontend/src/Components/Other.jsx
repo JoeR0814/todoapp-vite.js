@@ -35,7 +35,7 @@ function Other() {
         <div className='flex justify-center'>
           <form
             id='todo-form'
-            className='flex flex-col justify-center items-center p-2 border-solid border-2 border-black w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3'
+            className='bg-yellow-200 flex flex-col justify-center items-center p-2 border-solid border-2 border-black w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3'
           >
             <h1 className='text-3xl font-bold mb-2'>Other</h1>
             {items.map((item, index) => (
